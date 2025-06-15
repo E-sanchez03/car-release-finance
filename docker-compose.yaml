@@ -1,0 +1,29 @@
+services:
+  clickhouse-server:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse-server
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    environment:
+      - CLICKHOUSE_USER=user
+      - CLICKHOUSE_PASSWORD=password
+      - CLICKHOUSE_DB=stocks_db
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse/
+    healthcheck:
+      test: ["CMD", "clickhouse-client", "-q", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  clickhouse-client:
+    image: clickhouse/clickhouse-client:latest
+    container_name: clickhouse-client
+    command: ['--host', 'clickhouse-server']
+    depends_on:
+      clickhouse-server:
+        condition: service_healthy
+
+volumes:
+  clickhouse_data:
