@@ -1,6 +1,6 @@
 import xgboost as xgb
 from sklearn.metrics import classification_report, confusion_matrix
-from data_pipeline import get_prepared_data
+from src.data_pipeline import get_prepared_data
 
 # 1. Cargar y preparar los datos
 X_train, X_test, y_train, y_test = get_prepared_data()

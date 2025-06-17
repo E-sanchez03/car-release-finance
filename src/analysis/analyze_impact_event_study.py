@@ -4,10 +4,10 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
-from data_pipeline import load_data_from_clickhouse
+from src.data_pipeline import load_data_from_clickhouse
 
 def event_study_analysis():
-    """
+    """cd
     Realiza un 'event study'. Versión final que imputa los valores NaN de los retornos
     en lugar de eliminar filas.
     """
@@ -78,7 +78,7 @@ def event_study_analysis():
     plt.ylabel('CAAR (%)')
     plt.legend()
     plt.grid(True)
-    plt.savefig('event_study_caar.png')
+    plt.savefig('output/event_study_caar.png')
     print("\nGráfico 'event_study_caar.png' guardado.")
 if __name__ == "__main__":
     event_study_analysis()

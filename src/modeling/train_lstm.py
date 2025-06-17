@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from sklearn.metrics import classification_report, confusion_matrix
-from data_pipeline import get_prepared_data
+from src.data_pipeline import get_prepared_data
 
 # Función para crear secuencias para la LSTM
 def create_sequences(X, y, time_steps=30):

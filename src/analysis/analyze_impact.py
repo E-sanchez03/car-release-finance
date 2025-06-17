@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from data_pipeline import load_data_from_clickhouse
+from src.data_pipeline import load_data_from_clickhouse
 
 def descriptive_analysis():
     """
@@ -60,7 +60,7 @@ def descriptive_analysis():
     axes[2].set_ylim(0, df['volume_change_ratio'].quantile(0.95))
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
-    plt.savefig('impact_analysis_final.png')
+    plt.savefig('output/impact_analysis_final.png')
     print("\nGráfico 'impact_analysis_final.png' guardado.")
 if __name__ == "__main__":
     descriptive_analysis()

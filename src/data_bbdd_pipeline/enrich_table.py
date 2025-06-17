@@ -12,7 +12,7 @@ CLICKHOUSE_PORT = 9000
 CLICKHOUSE_USER = os.getenv('CH_USER')      
 CLICKHOUSE_PASSWORD = os.getenv('CH_PASSWORD') 
 DB_NAME = 'stocks_db'
-NEWS_FILE_PATH = 'noticias.txt' 
+NEWS_FILE_PATH = 'data/noticias.txt' 
 
 def scrape_news_date(url):
     """

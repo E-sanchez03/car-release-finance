@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers
 from sklearn.metrics import classification_report, confusion_matrix
-from data_pipeline import get_prepared_data
+from src.data_pipeline import get_prepared_data
 from train_lstm import create_sequences # Reutilizamos la función de secuencias
 
 # Bloque de Transformer

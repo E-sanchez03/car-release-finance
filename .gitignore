@@ -2,3 +2,11 @@ credenciales.env
 toyota_daily_data.json
 __pycache__/train_lstm.cpython-311.pyc
 __pycache__/data_pipeline.cpython-311.pyc
+src/__pycache__/__init__.cpython-311.pyc
+src/analysis/__pycache__/__init__.cpython-311.pyc
+src/analysis/__pycache__/analyze_impact.cpython-311.pyc
+src/analysis/__pycache__/analyze_impact_event_study.cpython-311.pyc
+src/data_bbdd_pipeline/__pycache__/__init__.cpython-311.pyc
+src/data_bbdd_pipeline/__pycache__/initialize_database.cpython-311.pyc
+src/data_bbdd_pipeline/__pycache__/enrich_table.cpython-311.pyc
+src/data_bbdd_pipeline/__pycache__/load_to_clickhouse.cpython-311.pyc
