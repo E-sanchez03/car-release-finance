@@ -28,6 +28,10 @@ ENGINE = MergeTree
 PARTITION BY toYYYYMM(event_date)
 ORDER BY (ticker, event_date);
 """
+ADD_COLUMNS = [f"""
+ALTER TABLE stocks_db.stock_daily ADD COLUMN IF NOT EXISTS News UInt8 DEFAULT 0;""",
+f"""ALTER TABLE stocks_db.stock_daily ADD COLUMN IF NOT EXISTS News_Type Nullable(String) DEFAULT NULL;
+"""]
 
 def main():
     """
@@ -53,7 +57,9 @@ def main():
         print(f">> Paso 3: Creando la tabla 'stock_daily'...")
         client.execute(CREATE_TABLE_SQL)
         print("   Tabla 'stock_daily' creada o ya existente.")
-
+        print(f" >> Añadir columnas relacionadas con noticias ...")
+        client.execute(ADD_COLUMNS[0])
+        client.execute(ADD_COLUMNS[1])
         print("\n✅ ¡Inicialización de la base de datos completada exitosamente!")
 
     except Exception as e:
