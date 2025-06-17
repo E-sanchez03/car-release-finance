@@ -1,2 +1,4 @@
 credenciales.env
 toyota_daily_data.json
+__pycache__/train_lstm.cpython-311.pyc
+__pycache__/data_pipeline.cpython-311.pyc
