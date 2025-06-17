@@ -4,6 +4,7 @@
 [![License: MIT][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+
 An end-to-end data science project that analyzes the financial impact of corporate news on Toyota's stock price and builds predictive models (XGBoost, LSTM, Transformer) to forecast future price movements.
 
 <br/>
@@ -156,7 +157,7 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 
 ## 📬 Contact
 
-Euge Sanchez - [@YourTwitterHandle](https://twitter.com/YourTwitterHandle) - your-email@example.com
+Eugenio Sánchez Carreño - [![LinkedIn][linkedin-shield]][linkedin-url] 
 
 Project Link: [https://github.com/E-sanchez03/car-release-finance](https://github.com/E-sanchez03/car-release-finance)
 
@@ -164,6 +165,6 @@ Project Link: [https://github.com/E-sanchez03/car-release-finance](https://githu
 [python-shield]: https://img.shields.io/badge/Python-3.9%2B-blue.svg
 [python-url]: https://www.python.org/
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/E-sanchez03/car-release-finance/blob/master/LICENSE.txt
+[license-url]: https://github.com/E-sanchez03/car-release-finance/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/YourLinkedIn
+[linkedin-url]: https://www.linkedin.com/in/eugenio-s%C3%A1nchez-carre%C3%B1o/
