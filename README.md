@@ -157,7 +157,7 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 
 ## 📬 Contact
 
-Eugenio Sánchez Carreño - [![LinkedIn][linkedin-shield]][linkedin-url] 
+Eugenio Sánchez Carreño - [https://www.linkedin.com/in/eugenio-s%C3%A1nchez-carre%C3%B1o/](https://www.linkedin.com/in/eugenio-s%C3%A1nchez-carre%C3%B1o/)
 
 Project Link: [https://github.com/E-sanchez03/car-release-finance](https://github.com/E-sanchez03/car-release-finance)
 
