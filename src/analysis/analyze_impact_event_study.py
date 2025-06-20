@@ -7,9 +7,8 @@ from sklearn.linear_model import LinearRegression
 from src.data_pipeline import load_data_from_clickhouse
 
 def event_study_analysis():
-    """cd
-    Realiza un 'event study'. Versión final que imputa los valores NaN de los retornos
-    en lugar de eliminar filas.
+    """
+    Realiza un 'event study'.
     """
     # 1. Cargar y unir datos (esta parte ya funciona)
     df_toyota = load_data_from_clickhouse(start_date='2019-01-01')
@@ -20,14 +19,10 @@ def event_study_analysis():
     df = df_toyota.join(market_close_series, how='inner')
     df.rename(columns={'^GSPC': 'market_close'}, inplace=True)
     
-    # --- LÓGICA CORREGIDA PARA MANEJAR NaNs ---
     # 2. Calcular retornos y rellenar el único NaN con 0
     df['toyota_return'] = df['close'].pct_change().fillna(0)
     df['market_return'] = df['market_close'].pct_change().fillna(0)
-    # Ya no necesitamos la línea df.dropna()
-    # ---------------------------------------------
     
-    # 3. El resto del código ahora encontrará los datos que necesita
     estimation_df = df[df['News'] == 0]
     if estimation_df.empty:
         print("\nError: No hay suficientes datos 'Sin Noticia' para estimar el modelo de mercado.")

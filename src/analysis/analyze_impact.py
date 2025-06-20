@@ -6,8 +6,7 @@ from src.data_pipeline import load_data_from_clickhouse
 
 def descriptive_analysis():
     """
-    Realiza un análisis descriptivo. Versión final que imputa los valores NaN
-    en lugar de borrarlos para no perder datos.
+    Realiza un análisis descriptivo.
     """
     # 1. Cargar datos
     df = load_data_from_clickhouse(start_date='2019-01-01')
@@ -18,15 +17,11 @@ def descriptive_analysis():
     df['volatility_range'] = (df['high'] - df['low']) / df['low']
     df['volume_change_ratio'] = df['volume'] / df['volume'].rolling(window=30).mean()
 
-    # --- NUEVA ESTRATEGIA: IMPUTACIÓN DE NaNs EN LUGAR DE dropna() ---
     # Rellenamos los NaNs iniciales usando el primer valor válido hacia atrás (back-fill)
     df.bfill(inplace=True)
     # Por si quedara algún NaN en medio, rellenamos hacia adelante (forward-fill)
     df.ffill(inplace=True)
-    # Ya no necesitamos df.dropna(), hemos salvado todas las filas.
-    # -------------------------------------------------------------------
 
-    # 3. Ahora la comparativa funcionará porque tendremos ambos grupos
     print("\n--- Comparativa de Métricas (Medias) ---")
     comparison = df.groupby('News')[['abs_return', 'volatility_range', 'volume_change_ratio']].mean().T
     
@@ -39,7 +34,7 @@ def descriptive_analysis():
     comparison.columns = ['Sin Noticia', 'Con Noticia']
     print(comparison)
 
-    # 4. Visualización (esta parte ahora funcionará correctamente)
+    # 4. Visualización 
     sns.set(style="whitegrid")
     fig, axes = plt.subplots(1, 3, figsize=(18, 6))
     fig.suptitle('Análisis de Impacto de Noticias', fontsize=16)
